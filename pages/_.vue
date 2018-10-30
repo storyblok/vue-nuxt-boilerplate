@@ -31,7 +31,7 @@ export default {
     this.$storyblok.on(['input', 'published', 'change'], (event) => {
       if (event.action == 'input') {
         if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
+          this.story.content = this.$storyblok.addComments(event.story.content, event.story.id)
         }
       } else {
         if (event.storyId === this.story.id) {
