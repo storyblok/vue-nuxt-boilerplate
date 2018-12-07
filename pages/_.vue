@@ -27,26 +27,13 @@ export default {
     return { story: { content: {} } }
   },
   mounted () {
-    this.$storyblok.init()
-    this.$storyblok.on(['input', 'published', 'change'], (event) => {
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action == 'input') {
         if (event.story.id === this.story.id) {
-          this.story.content = this.$storyblok.addComments(event.story.content, event.story.id)
+          this.story.content = event.story.content
         }
       } else {
-        if (event.storyId === this.story.id) {
-          loadData({
-            version: 'draft',
-            api: this.$storyapi,
-            cacheVersion: this.$store.state.cacheVersion,
-            errorCallback: console.error,
-            path: this.story.full_slug
-          }).then((data) => {
-            this.story = data.story
-          })
-        } else {
-          window.location.reload()
-        }
+        window.location.reload()
       }
     })
   },

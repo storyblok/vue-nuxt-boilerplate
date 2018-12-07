@@ -1,49 +1,65 @@
+const pkg = require('./package')
+
 module.exports = {
-  modules: [
-    ['storyblok-nuxt', {accessToken: 'vIxSxIvAUpbqD8V7NrciPAtt', cacheProvider: 'memory'}]
-  ],
-  plugins: [
-    '~/plugins/components',
-    '~/plugins/filters'
-  ],
-  router: {
-    middleware: 'setCacheVersion'
-  },
+  mode: 'universal',
+
   /*
   ** Headers of the page
   */
   head: {
-    title: 'vue-nuxt-storyblok-boilerplate',
+    title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js Storyblok Boilerplate' }
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
   /*
-  ** Customize the progress bar color
+  ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#fff' },
+
+  /*
+  ** Global CSS
+  */
+  css: [
+  ],
+
+  /*
+  ** Plugins to load before mounting the App
+  */
+  plugins: [
+    '~/plugins/components',
+    '~/plugins/filters'
+  ],
+
+  /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    ['storyblok-nuxt', {accessToken: 'vIxSxIvAUpbqD8V7NrciPAtt', cacheProvider: 'memory'}]
+  ],
+
+  /*
+  ** Router middleware
+  */
+  router: {
+    middleware: 'setCacheVersion'
+  },
+
   /*
   ** Build configuration
   */
   build: {
     /*
-    ** Run ESLint on save
+    ** You can extend webpack config here
     */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+    extend(config, ctx) {
+
     }
   }
 }
-
