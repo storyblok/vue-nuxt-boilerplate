@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "nuxt": "^2.0.0",
-    "storyblok-nuxt": "1.0.0"
+    "nuxt": "^2.4.0",
+    "storyblok-nuxt": "^1.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
