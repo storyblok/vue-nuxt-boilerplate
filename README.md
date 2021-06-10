@@ -1,39 +1,35 @@
-# Nuxt.js Storyblok Boilerplate
+# Nuxt Storyblok Boilerplate
 
-## How to get started?
+> To get better understanding of this project and how it works, read our [Add a headless CMS to Nuxt in 5 minutes](https://www.storyblok.com/tp/headless-cms-nuxtjs) article.
 
-1. [Register](https://app.storyblok.com/#!/signup) at Storyblok for free
-2. Create a new empty Space and exchange the preview token with your own in ```nuxt.config.js``` (not required if you have downloaded the project via app.storyblok.com)
+## Resources
 
-```js
-  // in nuxt.config.js
-  modules: [
-    ['storyblok-nuxt', 
-      { 
-        accessToken: '<Your_Access_Token_Here>', cacheProvider: 'memory'
-      }
-    ]
-  ],
-```
+Visit our technology [Nuxt Technology Hub](https://www.storyblok.com/tc/nuxtjs) for more tutorials and videos how to use Storyblok together with Vue.js and Nuxt.
 
-3. Read the Nuxt.js tutorial about Storyblok's concept: https://www.storyblok.com/tp/nuxt-js-multilanguage-website-tutorial
-4. Enjoy and start developing
+## Configuration Steps
+
+1. Create new Space in Storyblok
+2. Obtain Preview Token from the Settings of the Space.
+3. Replace the `accessToken` value in `nuxt.config.js` file with your Preview Token.
+4. Your Nuxt.js project can be started and will consume data from your Storyblok Space.
+
+> For more advanced article on how to build multilanguage website with Storyblok and Nuxt.js, check our [The Complete Guide to Build a Full Blown Multilanguage Website with Nuxt.js](https://www.storyblok.com/tp/nuxt-js-multilanguage-website-tutorial).
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
-$ npm install # or yarn install
+$ yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev # or yarn dev
+$ yarn dev
 
 # build for production and launch server
-$ npm run build # or yarn build
-$ npm start # or yarn start
+$ yarn build
+$ yarn start
 
 # generate static project
-$ npm run generate # or yarn generate
+$ yarn generate
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

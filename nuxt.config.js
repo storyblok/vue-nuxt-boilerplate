@@ -1,65 +1,58 @@
-const pkg = require('./package')
+export default {
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
 
-module.exports = {
-  mode: 'universal',
-
-  /*
-  ** Headers of the page
-  */
+  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: pkg.name,
+    title: 'nuxt-5min-storyblok',
+    htmlAttrs: {
+      lang: 'en'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-
-  /*
-  ** Global CSS
-  */
+  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/components',
-    '~/plugins/filters'
+    '~/plugins/components'
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+  ],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    ['storyblok-nuxt', {accessToken: 'vIxSxIvAUpbqD8V7NrciPAtt', cacheProvider: 'memory'}]
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: '432cQ9VTZJMlxGzBORHWSwtt',
+        cacheProvider: 'memory'
+      }
+    ],
   ],
 
-  /*
-  ** Router middleware
-  */
-  router: {
-    middleware: 'setCacheVersion'
-  },
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {},
 
-  /*
-  ** Build configuration
-  */
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-
-    }
   }
 }

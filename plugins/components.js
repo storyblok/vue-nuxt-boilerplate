@@ -4,7 +4,7 @@ import Teaser from '~/components/Teaser.vue'
 import Grid from '~/components/Grid.vue'
 import Feature from '~/components/Feature.vue'
 
-Vue.component('blok-page', Page)
-Vue.component('blok-teaser', Teaser)
-Vue.component('blok-grid', Grid)
-Vue.component('blok-feature', Feature)
+Vue.component('page', Page)
+Vue.component('teaser', Teaser)
+Vue.component('grid', Grid)
+Vue.component('feature', Feature)
