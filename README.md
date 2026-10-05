@@ -1,3 +1,7 @@
+> [!WARNING]
+> This repository is no longer maintained.
+> For a current Nuxt + Storyblok starter, use [blueprint-core-nuxt](https://github.com/storyblok/blueprint-core-nuxt).
+
 # Nuxt Storyblok Boilerplate
 
 > To get better understanding of this project and how it works, read our [Add a headless CMS to Nuxt in 5 minutes](https://www.storyblok.com/tp/headless-cms-nuxtjs) article.
